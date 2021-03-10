@@ -116,15 +116,7 @@ zip([1,2,3],[4,5,6])
 iter([0,1,2,3,4]) # See Loops section
 ```
 
-## Tuples
 
-- Ordered and immutable
-
-```python
-my_tuple = (1,2,3)
-my_tuple = tuple([1,2,3])
-my_tuple[0]
-```
 
 ## Lists
 
@@ -167,6 +159,16 @@ my_dict['a'] # `aaaaa`
 my_dict['a'] = 'AAAAA'
 my_dict.pop('a') # `AAAAA`
 for key in my_dict: print(key, my_dict[key])
+```
+
+## Tuples
+
+- Ordered and immutable
+
+```python
+my_tuple = (1,2,3)
+my_tuple = tuple([1,2,3])
+my_tuple[0]
 ```
 
 ## Enumerate
