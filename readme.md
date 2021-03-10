@@ -64,6 +64,10 @@ f'2 cubed is {2**3}' # Interpolation
 
 chars = list("abc") # ['a', 'b', 'c']
 ", ".join(chars)    # "1, 2, 3"
+
+words = "hello there".split() # ['hello', 'there']
+
+'a'*10 # 'aaaaaaaaaa'
 ```
 
 ## Control Flow
