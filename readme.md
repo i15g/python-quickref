@@ -123,6 +123,7 @@ iter([0,1,2,3,4]) # See Loops section
 
 
 ## Lists
+- Use an array internally
 
 ```python
 my_list = [-1,0,1,2,3]
@@ -141,7 +142,7 @@ my_list.reverse()
 ```
 
 ## Sets
-
+- Use a Hash table internally
 - Unordered, no duplicates
 
 ```python
@@ -156,7 +157,7 @@ my_set.discard('d') # no exception
 ```
 
 ## Dictionaries / Maps
-
+- Use a Hash table internally
 ```python
 my_dict = {'a': 'aaaaa', 'b': 'bbbbb', 'c': 'ccccc'}
 my_dict['a'] # `aaaaa`
