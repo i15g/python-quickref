@@ -191,14 +191,7 @@ newlist = [expression for item in iterable if condition == True]
 newlist = [s.upper() for s in ['a','b','c'] if s <= 'b' ]
 ```
 
-## Object
-```python
-class Vehicle:
-  def __init__(self, wheels, doors):
-    self.wheels = wheels
-    self.doors = doors
-```
-
 ## Further reading
 
 - https://www.w3schools.com/python/default.asp
+- https://www.programiz.com/python-programming/inheritance
