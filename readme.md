@@ -62,12 +62,31 @@ for char in "hello":
 
 f'2 cubed is {2**3}' # Interpolation
 
-chars = list("abc") # ['a', 'b', 'c']
-", ".join(chars)    # "1, 2, 3"
+'a'*10 # 'aaaaaaaaaa'
+
+# Methods:
+s = "this is a string"
+ss = "is"
+s.startswith(ss), s.endswith(ss)
+s.count(ss)
+s.index(ss), s.rindex(ss) # exception
+s.find(ss), s.rfind(ss)  # no exception
+
+s.isalpha() # alphabet
+s.isdigit() # digits 0-9
+s.isalnum() # alphanumeric
+s.islower(), s.isupper()
+
+s.lower(), s.upper()
+s.replace("string", "blah")
+s.lstrip(), s.strip(), s.rstrip() # trim whitespace
+"{}, {}!".format("Hello", "World")
+
+s.ljust(i), s.center(i), s.rjust(i) # i = len of returned str
 
 words = "hello there".split() # ['hello', 'there']
-
-'a'*10 # 'aaaaaaaaaa'
+chars = list("abc") # ['a', 'b', 'c']
+", ".join(chars)    # "1, 2, 3"
 ```
 
 ## Control Flow
@@ -120,9 +139,8 @@ zip([1,2,3],[4,5,6])
 iter([0,1,2,3,4]) # See Loops section
 ```
 
-
-
 ## Lists
+
 - Use an array internally
 
 ```python
@@ -142,6 +160,7 @@ my_list.reverse()
 ```
 
 ## Sets
+
 - Use a Hash table internally
 - Unordered, no duplicates
 
@@ -157,7 +176,9 @@ my_set.discard('d') # no exception
 ```
 
 ## Dictionaries / Maps
+
 - Use a Hash table internally
+
 ```python
 my_dict = {'a': 'aaaaa', 'b': 'bbbbb', 'c': 'ccccc'}
 my_dict['a'] # `aaaaa`
@@ -191,12 +212,25 @@ newlist = [expression for item in iterable if condition == True]
 newlist = [s.upper() for s in ['a','b','c'] if s <= 'b' ]
 ```
 
-## Object
+## Objects
+
 ```python
 class Vehicle:
   def __init__(self, wheels, doors):
     self.wheels = wheels
     self.doors = doors
+```
+
+# Script shebang
+
+https://stackoverflow.com/questions/7670303/purpose-of-usr-bin-python3-shebang
+
+```python
+#!/usr/bin/env python3
+import stuff
+
+def my_func():
+  print("hello")
 ```
 
 ## Further reading
