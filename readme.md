@@ -197,6 +197,23 @@ my_tuple = tuple([1,2,3])
 my_tuple[0]
 ```
 
+## Slicing
+```python
+my_list = list("abcde")
+my_list[ start_index : stop_index_exlusive : step]
+
+# All these mean the same thing:
+my_list[ 0 : -1 : 1] # Defaults
+my_list[::]
+my_list[:]
+my_list[]
+my_list
+
+# Examples
+my_list[::2] # Every second element
+my_list[::-1] # Reversed
+```
+
 ## Enumerate
 
 ```python
@@ -236,3 +253,5 @@ def my_func():
 ## Further reading
 
 - https://www.w3schools.com/python/default.asp
+- https://www.programiz.com/python-programming/inheritance
+- https://www.geeksforgeeks.org/inheritance-in-python/
