@@ -142,6 +142,10 @@ iter([0,1,2,3,4]) # See Loops section
 ## Lists
 
 - Use an array internally
+- Can be also be used for:
+  - stacks - append() and pop()
+  - queues - append() and pop(0)
+    - pop(0) is O(n) --> use collections.deque instead
 
 ```python
 my_list = [-1,0,1,2,3]
@@ -153,7 +157,7 @@ my_list[-1] #  3
 [3,2,1] == [1,2,3] # False
 
 my_list.append(4)
-my_list.pop() #default is -1
+my_list.pop() #defaults to the last element (-1)
 my_list.insert(0, -10)
 
 # In-place ops:
@@ -171,14 +175,13 @@ my_list.reverse()
 my_set = {'a','b','c'}
 my_set = set(['a','b','c'])
 my_set.add('d')
-my_set.remove('d')
+my_set.remove('d')  # exception
+my_set.discard('d') # no exception
+
+'d' in my_set # False
 
 {1,2,3} == {1,2,3}   # True
 {1,2,3} == {3,2,2,1} # True
-
-'d' in my_set # False
-my_set.remove('d')  # exception
-my_set.discard('d') # no exception
 ```
 
 ## Dictionaries / Maps
