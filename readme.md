@@ -23,7 +23,7 @@ a *= 2
 # Comparison ("same contents?")
 a == b
 a != b
-a > b
+a > b and b >=  c
 
 # Identity ("same object/pointer?")
 a is b
