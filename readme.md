@@ -209,7 +209,7 @@ my_list = list("abcde")
 my_list[ start_index : stop_index_exlusive : step]
 
 # All these mean the same thing:
-my_list[ 0 : -1 : 1] # Defaults
+my_list[ 0 : -1 : 1 ] # Defaults
 my_list[::]
 my_list[:]
 my_list[]
@@ -217,7 +217,7 @@ my_list
 
 # Examples
 my_list[::2] # Every second element
-my_list[::-1] # Reversed
+"abc"[::-1] # Reverse a string
 ```
 
 ## Enumerate
@@ -233,6 +233,23 @@ for index,val in enumerate('abc'): print(index,val)
 ```python
 newlist = [expression for item in iterable if condition == True]
 newlist = [s.upper() for s in ['a','b','c'] if s <= 'b' ]
+```
+
+## Exceptions
+```python
+if a > b:
+  raise Exception("uh oh")
+
+try:
+  do_something()
+except ArithmeticError:
+  print("Caught a arithmetic error")
+except:
+  print("Caught a misc error")
+else:
+  print("Executed iff nothing went wrong")
+finally:
+  print("This will always execute")
 ```
 
 ## Objects
