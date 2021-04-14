@@ -264,6 +264,9 @@ class Vehicle:
   def __init__(self, wheels, doors):
     self.wheels = wheels
     self.doors = doors
+  
+  def my_class_method(self):
+    pass
 ```
 
 ## Script shebang
