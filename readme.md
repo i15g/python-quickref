@@ -1,6 +1,7 @@
 # Python Quickref
 
 - snake_case (unless dealing with legacy code)
+- zero-based indexing
 
 ```python
 a = 1               # int
