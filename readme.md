@@ -213,7 +213,7 @@ my_list = list("abcde")
 my_list[ start_index : stop_index_exlusive : step]
 
 # All these mean the same thing:
-my_list[ 0 : -1 : 1 ] # Defaults
+my_list[ 0 : len(my_list) : 1 ] # Defaults
 my_list[::]
 my_list[:]
 my_list[]
