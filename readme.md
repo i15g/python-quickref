@@ -149,6 +149,9 @@ my_list = list({-1,0,1,2,3})
 my_list[0]  # -1
 my_list[-1] #  3
 
+[1,2,3] == [1,2,3] # True
+[3,2,1] == [1,2,3] # False
+
 my_list.append(4)
 my_list.pop() #default is -1
 my_list.insert(0, -10)
@@ -169,6 +172,9 @@ my_set = {'a','b','c'}
 my_set = set(['a','b','c'])
 my_set.add('d')
 my_set.remove('d')
+
+{1,2,3} == {1,2,3}   # True
+{1,2,3} == {3,2,2,1} # True
 
 'd' in my_set # False
 my_set.remove('d')  # exception
@@ -238,7 +244,7 @@ class Vehicle:
     self.doors = doors
 ```
 
-# Script shebang
+## Script shebang
 
 https://stackoverflow.com/questions/7670303/purpose-of-usr-bin-python3-shebang
 
