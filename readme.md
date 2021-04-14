@@ -50,6 +50,7 @@ c = float('3.5')
 ## Strings
 
 - Strings are immutable arrays
+- Use a list of strings and `join` to mimic a stringbuilder
 
 ```python
 s = "hello"
