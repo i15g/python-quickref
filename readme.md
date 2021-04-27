@@ -209,6 +209,7 @@ my_tuple[0]
 ```
 
 ## Slicing
+
 ```python
 my_list = list("abcde")
 my_list[ start_index : stop_index_exlusive : step]
@@ -241,6 +242,7 @@ newlist = [s.upper() for s in ['a','b','c'] if s <= 'b' ]
 ```
 
 ## Exceptions
+
 ```python
 if a > b:
   raise Exception("uh oh")
@@ -264,7 +266,7 @@ class Vehicle:
   def __init__(self, wheels, doors):
     self.wheels = wheels
     self.doors = doors
-  
+
   def my_class_method(self):
     pass
 ```
@@ -279,6 +281,19 @@ import stuff
 
 def my_func():
   print("hello")
+```
+
+## File IO
+
+```python
+with open('data.txt','w') as f:
+  for i in range(10):
+    f.write(f'{i}\n')
+
+with open('data.txt') as f:
+  lines = f.readlines()
+for line in lines:
+  print(line)
 ```
 
 ## Further reading
