@@ -157,6 +157,7 @@ my_list[-1] #  3
 
 [1,2,3] == [1,2,3] # True
 [3,2,1] == [1,2,3] # False
+list1 + list2 #combine 2 lists
 
 my_list.append(4)
 my_list.pop() #defaults to the last element (-1)
