@@ -209,6 +209,38 @@ my_tuple = tuple([1,2,3])
 my_tuple[0]
 ```
 
+## collections — Container datatypes
+
+```python
+# dict/map subclass where elements are keys and counts are the values
+from collections import Counter
+c = Counter(iterable_or_dict) # strings are iterables too
+
+c(element) # returns count or 0 if element DNE
+c(element) = 5 # set count
+del c(element) # delete element from c
+
+c.elements() #iterator, keys are repeated according to their counts
+c.most_common(optional_int)
+c.update(optional_iterable_or_map) #update c with param's values
+
+# Common patterns (copied from docs):
+sum(c.values())                 # total of all counts
+c.clear()                       # reset all counts
+list(c)                         # list unique elements
+set(c)                          # convert to a set
+dict(c)                         # convert to a regular dictionary
+c.items()                       # convert to a list of (elem, cnt) pairs
+Counter(dict(list_of_pairs))    # convert from a list of (elem, cnt) pairs
+c.most_common()[:-n-1:-1]       # n least common elements
++c                              # remove zero and negative counts
+```
+
+https://docs.python.org/3/library/collections.html#collections.deque
+```python
+deque
+```
+
 ## Slicing
 
 ```python
@@ -270,6 +302,38 @@ class Vehicle:
 
   def my_class_method(self):
     pass
+```
+
+## Packing and Unpacking
+
+```python
+x, y = y, z # swap values
+
+# tuple unpacking
+(x, y, z) = 1, 2, 3
+x, y, z = (1, 2, 3)
+x, y, z = 1, 2, 3
+
+# iterable unpacking (NB: not safe with sets)
+x, y, z = '123'
+x, y, z = [1, 2, 3]
+x, y, z = range(3)
+
+# Star/* operator aka unpacking operator
+*x, = 1, 2 # note the comma, which makes it a tuple; aka x = [1, 2]
+x, *y, z = [1,2,3,4,5] # aka x=1  y=[2,3,4]  z=5
+
+my_list0 = [1,2,3,4,5]
+my_list1 = [0,*my_list0,6]
+```
+
+print unpacking via star operator `*`:
+
+```python
+arr = [1, 2, 3, 4, 5]
+print(' '.join(map(str,arr)))
+print (*arr)
+# '1 2 3 4 5' printed by both
 ```
 
 ## Script shebang
