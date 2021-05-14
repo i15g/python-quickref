@@ -282,34 +282,20 @@ newlist = [expression for item in iterable if condition == True]
 newlist = [s.upper() for s in ['a','b','c'] if s <= 'b' ]
 ```
 
-## Exceptions
+## itertools
 
 ```python
-if a > b:
-  raise Exception("uh oh")
+from itertools import *
+p = permutations([1, 2])
+# (1, 2) (2, 1)
 
-try:
-  do_something()
-except ArithmeticError:
-  print("Caught a arithmetic error")
-except:
-  print("Caught a misc error")
-else:
-  print("Executed iff nothing went wrong")
-finally:
-  print("This will always execute")
-```
+c = combinations([1, 2, 3], 2)
+# (1, 2) (1, 3) (2, 3)
 
-## Objects
-
-```python
-class Vehicle:
-  def __init__(self, wheels, doors):
-    self.wheels = wheels
-    self.doors = doors
-
-  def my_class_method(self):
-    pass
+list_of_lists = [['a', 'b'], ['-'], ['y', 'z']]
+products = product(*list_of_lists)
+mp = map(lambda i: "".join(i), products)
+# a-y a-z b-y b-z
 ```
 
 ## Packing and Unpacking
@@ -342,6 +328,36 @@ arr = [1, 2, 3, 4, 5]
 print(' '.join(map(str,arr)))
 print (*arr)
 # '1 2 3 4 5' printed by both
+```
+
+## Exceptions
+
+```python
+if a > b:
+  raise Exception("uh oh")
+
+try:
+  do_something()
+except ArithmeticError:
+  print("Caught a arithmetic error")
+except:
+  print("Caught a misc error")
+else:
+  print("Executed iff nothing went wrong")
+finally:
+  print("This will always execute")
+```
+
+## Objects
+
+```python
+class Vehicle:
+  def __init__(self, wheels, doors):
+    self.wheels = wheels
+    self.doors = doors
+
+  def my_class_method(self):
+    pass
 ```
 
 ## Script shebang
