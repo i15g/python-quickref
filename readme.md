@@ -220,6 +220,9 @@ c(element) # returns count or 0 if element DNE
 c(element) = 5 # set count
 del c(element) # delete element from c
 
+for element in c:
+  count = c[element])
+
 c.elements() #iterator, keys are repeated according to their counts
 c.most_common(optional_int)
 c.update(optional_iterable_or_map) #update c with param's values
