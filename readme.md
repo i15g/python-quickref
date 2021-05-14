@@ -240,8 +240,10 @@ c.most_common()[:-n-1:-1]       # n least common elements
 ```
 
 https://docs.python.org/3/library/collections.html#collections.deque
+
 ```python
-deque
+from collections import deque
+rotate()
 ```
 
 ## Slicing
@@ -363,6 +365,11 @@ with open('data.txt') as f:
 for line in lines:
   print(line)
 ```
+
+## Is python call by reference or call by value?
+
+- Immutables like strings and tuples are call by value
+- Mutables like collections are call by reference
 
 ## Further reading
 
