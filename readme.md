@@ -302,3 +302,5 @@ for line in lines:
 - https://www.w3schools.com/python/default.asp
 - https://www.programiz.com/python-programming/inheritance
 - https://www.geeksforgeeks.org/inheritance-in-python/
+- https://www.cs.put.poznan.pl/csobaniec/software/python/py-qrc.html
+- https://github.com/justmarkham/python-reference/blob/master/reference.py
