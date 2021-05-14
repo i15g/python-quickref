@@ -248,6 +248,8 @@ rotate()
 
 ## Slicing
 
+Slicing lists does not generate copies of the objects in the list; it just copies the references to them.
+
 ```python
 my_list = list("abcde")
 my_list[ start_index : stop_index_exlusive : step]
@@ -262,6 +264,7 @@ my_list
 # Examples
 my_list[::2] # Every second element
 "abc"[::-1] # Reverse a string
+arr[n:] + arr[:n] # shift/roll/rotate a list
 ```
 
 ## Enumerate
