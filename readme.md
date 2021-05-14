@@ -286,15 +286,15 @@ newlist = [s.upper() for s in ['a','b','c'] if s <= 'b' ]
 
 ```python
 from itertools import *
-p = permutations([1, 2])
+permutations([1, 2])
 # (1, 2) (2, 1)
 
-c = combinations([1, 2, 3], 2)
+combinations([1, 2, 3], 2)
 # (1, 2) (1, 3) (2, 3)
 
 list_of_lists = [['a', 'b'], ['-'], ['y', 'z']]
 products = product(*list_of_lists)
-mp = map(lambda i: "".join(i), products)
+map(lambda i: "".join(i), products)
 # a-y a-z b-y b-z
 ```
 
