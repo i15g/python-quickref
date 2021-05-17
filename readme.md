@@ -301,7 +301,7 @@ combinations([1, 2, 3], 2)
 # (1, 2) (1, 3) (2, 3)
 
 list_of_lists = [[0, 1], [5], [8 ,9]]
-products = product(*list_of_lists)
+product(*list_of_lists)
 # (0, 5, 8) (0, 5, 9) (1, 5, 8) (1, 5, 9)
 ```
 
