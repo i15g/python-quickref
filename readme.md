@@ -51,7 +51,7 @@ c = float('3.5')
 ## Strings
 
 - A string is an immutable array of chars
-  - Which means you can pass a string anywhere that's expecting an iterator (eg: map)
+  - Which means you can pass a string anywhere that's expecting an iterator (eg: `map(func,iter)`)
 - Use a list of strings and `join()` to mimic a stringbuilder
 
 ```python
@@ -201,7 +201,7 @@ my_dict.pop('a') # `AAAAA`
 
 # If key DNE, sets my_dict[key] = value
 # Returns my_dict[key]
-my_dict.setdefault(key, value) 
+my_dict.setdefault(key, value)
 
 for key in my_dict: print(key, my_dict[key])
 for key, value in my_dict.items(): print(key,value)
@@ -310,7 +310,7 @@ products = product(*list_of_lists)
 ```python
 # swap values
 x, y = y, z
-arr[0], arr[1] = arr[1], arr[0] 
+arr[0], arr[1] = arr[1], arr[0]
 
 # tuple unpacking
 (x, y, z) = 1, 2, 3
