@@ -50,8 +50,9 @@ c = float('3.5')
 
 ## Strings
 
-- Strings are immutable arrays
-- Use a list of strings and `join` to mimic a stringbuilder
+- A string is an immutable array of chars
+  - Which means you can pass a string anywhere that's expecting an iterator (eg: map)
+- Use a list of strings and `join()` to mimic a stringbuilder
 
 ```python
 s = "hello"
@@ -154,6 +155,7 @@ my_list = [-1,0,1,2,3]
 my_list = list({-1,0,1,2,3})
 my_list[0]  # -1
 my_list[-1] #  3
+[0]*n # init n-length array and fill
 
 [1,2,3] == [1,2,3] # True
 [3,2,1] == [1,2,3] # False
@@ -196,7 +198,13 @@ my_dict = {'a': 'aaaaa', 'b': 'bbbbb', 'c': 'ccccc'}
 my_dict['a'] # `aaaaa`
 my_dict['a'] = 'AAAAA'
 my_dict.pop('a') # `AAAAA`
+
+# If key DNE, sets my_dict[key] = value
+# Returns my_dict[key]
+my_dict.setdefault(key, value) 
+
 for key in my_dict: print(key, my_dict[key])
+for key, value in my_dict.items(): print(key,value)
 ```
 
 ## Tuples
@@ -278,7 +286,7 @@ for index,val in enumerate('abc'): print(index,val)
 ## List Comprehensions
 
 ```python
-newlist = [expression for item in iterable if condition == True]
+newlist = [expression for item in iterable if condition]
 newlist = [s.upper() for s in ['a','b','c'] if s <= 'b' ]
 ```
 
@@ -292,16 +300,17 @@ permutations([1, 2])
 combinations([1, 2, 3], 2)
 # (1, 2) (1, 3) (2, 3)
 
-list_of_lists = [['a', 'b'], ['-'], ['y', 'z']]
+list_of_lists = [[0, 1], [5], [8 ,9]]
 products = product(*list_of_lists)
-map(lambda i: "".join(i), products)
-# a-y a-z b-y b-z
+# (0, 5, 8) (0, 5, 9) (1, 5, 8) (1, 5, 9)
 ```
 
 ## Packing and Unpacking
 
 ```python
-x, y = y, z # swap values
+# swap values
+x, y = y, z
+arr[0], arr[1] = arr[1], arr[0] 
 
 # tuple unpacking
 (x, y, z) = 1, 2, 3
