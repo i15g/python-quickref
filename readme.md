@@ -48,6 +48,17 @@ b = int('2')
 c = float('3.5')
 ```
 
+## Truthy and Falsey
+- Falsey
+  - Empty sequences/collections (lists, tuples, dictionaries, sets, strings, range(0))
+  - Zero of any numeric: 0, 0.0, 0j
+  - Constants: None, False
+- Truthy
+  - Non-empty sequences/collections
+  - Non zero numerics
+  - True
+- bool(thing) func can check
+
 ## Strings
 
 - A string is an immutable array of chars
@@ -133,7 +144,7 @@ chr(ord('a')) # char to unicode
 sorted([3,1,2])   sorted([1,3,2],key=lambda x: abs(x),reverse=True)
 all([True, True])
 any([True, True])
-filter(lambda x: x > 1, [1,2,3]) # If function is None, the identity function is assumed, that is, all elements of iterable that are false are removed.
+filter(lambda x: x > 1, [1,2,3]) # If func is None > identity function > falsey elements are removed
 map(abs, [-1,2,3])
 min|max([1,2,3])
 sum([1,2,3])
@@ -145,7 +156,7 @@ iter([0,1,2,3,4]) # See Loops section
 filter(None, [None,1,2,3,None]) # [1,2,3]
 # Count number of elements that pass an arb filter without extra memory
 sum(map(lambda x: x > 4, arr))
-sum(1 for x in arr if x > 4)
+sum(1 for x in arr if x > 4) # Inside the parens is a `generator expression`
 sum(x > 4 for x in arr) # Works because int(True) == 1
 ```
 
@@ -331,6 +342,29 @@ from collections import deque
 rotate()
 ```
 
+## heapq
+
+- heap queue algorithm aka priority queue algorithm
+- heapq implements a min heap
+  - Multiply the values by -1 to achieve a max heap
+
+```python
+from heapq import *
+arr = [1,2,3,4,5]
+heapify(arr)
+
+heappush(arr, item)
+heappop(heap) #pop smallest
+
+##############################################
+# iterable isn't required to be a heap
+# For larger values of n, it's more efficient to just use sorted()
+nlargest(n, iterable, key=None) aka sorted(iterable, reverse=True)[:n]
+nsmallest(n, iterable, key=None) aka sorted(iterable)[:n]
+```
+
+TODO https://docs.python.org/3/library/heapq.html#basic-examples
+
 ## itertools
 
 ```python
@@ -353,6 +387,9 @@ from functools import *
 reduce(function, iterable[, initializer])
 reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) # ((((1+2)+3)+4)+5) = 15
 
+import operator
+def prod(factors): #same idea as sum() builtin
+    return reduce(operator.mul, factors, 1)
 ```
 
 ## Exceptions
@@ -421,6 +458,7 @@ for line in lines:
 
 ## Further reading
 
+- https://wiki.python.org/moin/TimeComplexity
 - https://www.w3schools.com/python/default.asp
 - https://www.programiz.com/python-programming/inheritance
 - https://www.geeksforgeeks.org/inheritance-in-python/
