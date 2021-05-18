@@ -130,16 +130,23 @@ chr(ord('a')) # char to unicode
 ### Iterables
 
 ```python
-sorted([3,1,2])
+sorted([3,1,2])   sorted([1,3,2],key=lambda x: abs(x),reverse=True)
 all([True, True])
 any([True, True])
-filter(lambda x: x > 1, [1,2,3])
+filter(lambda x: x > 1, [1,2,3]) # If function is None, the identity function is assumed, that is, all elements of iterable that are false are removed.
 map(abs, [-1,2,3])
 min|max([1,2,3])
 sum([1,2,3])
 reversed([1,2,3])
-zip([1,2,3],[4,5,6])
+zip([1,2,3],[4,5,6]) # [(1, 4), (2, 5), (3, 6)]
 iter([0,1,2,3,4]) # See Loops section
+
+# Examples
+filter(None, [None,1,2,3,None]) # [1,2,3]
+# Count number of elements that pass an arb filter without extra memory
+sum(map(lambda x: x > 4, arr))
+sum(1 for x in arr if x > 4)
+sum(x > 4 for x in arr) # Works because int(True) == 1
 ```
 
 ## Lists
@@ -217,43 +224,6 @@ my_tuple = tuple([1,2,3])
 my_tuple[0]
 ```
 
-## collections — Container datatypes
-
-```python
-# dict/map subclass where elements are keys and counts are the values
-from collections import Counter
-c = Counter(iterable_or_dict) # strings are iterables too
-
-c(element) # returns count or 0 if element DNE
-c(element) = 5 # set count
-del c(element) # delete element from c
-
-for element in c:
-  count = c[element])
-
-c.elements() #iterator, keys are repeated according to their counts
-c.most_common(optional_int)
-c.update(optional_iterable_or_map) #update c with param's values
-
-# Common patterns (copied from docs):
-sum(c.values())                 # total of all counts
-c.clear()                       # reset all counts
-list(c)                         # list unique elements
-set(c)                          # convert to a set
-dict(c)                         # convert to a regular dictionary
-c.items()                       # convert to a list of (elem, cnt) pairs
-Counter(dict(list_of_pairs))    # convert from a list of (elem, cnt) pairs
-c.most_common()[:-n-1:-1]       # n least common elements
-+c                              # remove zero and negative counts
-```
-
-https://docs.python.org/3/library/collections.html#collections.deque
-
-```python
-from collections import deque
-rotate()
-```
-
 ## Slicing
 
 Slicing lists does not generate copies of the objects in the list; it just copies the references to them.
@@ -290,21 +260,6 @@ newlist = [expression for item in iterable if condition]
 newlist = [s.upper() for s in ['a','b','c'] if s <= 'b' ]
 ```
 
-## itertools
-
-```python
-from itertools import *
-permutations([1, 2])
-# (1, 2) (2, 1)
-
-combinations([1, 2, 3], 2)
-# (1, 2) (1, 3) (2, 3)
-
-list_of_lists = [[0, 1], [5], [8 ,9]]
-product(*list_of_lists)
-# (0, 5, 8) (0, 5, 9) (1, 5, 8) (1, 5, 9)
-```
-
 ## Packing and Unpacking
 
 ```python
@@ -337,6 +292,67 @@ arr = [1, 2, 3, 4, 5]
 print(' '.join(map(str,arr)))
 print (*arr)
 # '1 2 3 4 5' printed by both
+```
+
+## collections — Container datatypes
+
+```python
+# dict/map subclass where elements are keys and counts are the values
+from collections import Counter
+c = Counter(iterable_or_dict) # strings are iterables too
+
+c[element] # returns count or 0 if element DNE
+c[element] = 5 # set count
+del c[element] # delete element from c
+
+for element in c:
+  count = c[element]
+
+c.elements() #iterator, keys are repeated according to their counts
+c.most_common(optional_int)
+c.update(optional_iterable_or_map) #update c with param's values
+
+# Common patterns (copied from docs):
+sum(c.values())                 # total of all counts
+c.clear()                       # reset all counts
+list(c)                         # list unique elements
+set(c)                          # convert to a set
+dict(c)                         # convert to a regular dictionary
+c.items()                       # convert to a list of (elem, cnt) pairs
+Counter(dict(list_of_pairs))    # convert from a list of (elem, cnt) pairs
+c.most_common()[:-n-1:-1]       # n least common elements
++c                              # remove zero and negative counts
+```
+
+https://docs.python.org/3/library/collections.html#collections.deque
+
+```python
+from collections import deque
+rotate()
+```
+
+## itertools
+
+```python
+from itertools import *
+permutations([1, 2])
+# (1, 2) (2, 1)
+
+combinations([1, 2, 3], 2)
+# (1, 2) (1, 3) (2, 3)
+
+list_of_lists = [[0, 1], [5], [8 ,9]]
+product(*list_of_lists)
+# (0, 5, 8) (0, 5, 9) (1, 5, 8) (1, 5, 9)
+```
+
+## functools
+
+```python
+from functools import *
+reduce(function, iterable[, initializer])
+reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) # ((((1+2)+3)+4)+5) = 15
+
 ```
 
 ## Exceptions
@@ -398,6 +414,10 @@ for line in lines:
 
 - Immutables like strings and tuples are call by value
 - Mutables like collections are call by reference
+
+## Trivia
+
+- Python uses an algorithm called Timsort. A hybrid sorting algorithm, Timsort is derived from merge sort and insertion sort, designed to perform well on many kinds of real-world data. Uses hand-optimized C under the hood.
 
 ## Further reading
 
