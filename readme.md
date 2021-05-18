@@ -49,6 +49,10 @@ c = float('3.5')
 ```
 
 ## Truthy and Falsey
+- `boolean contexts`
+  - if or while condition
+  - operand of boolean ops (`and`, `not`, etc)
+  - param to functions like any()
 - Falsey
   - Empty sequences/collections (lists, tuples, dictionaries, sets, strings, range(0))
   - Zero of any numeric: 0, 0.0, 0j
@@ -58,6 +62,7 @@ c = float('3.5')
   - Non zero numerics
   - True
 - bool(thing) func can check
+- `if len(arr) > 0: foo()` can become `if arr: foo()`
 
 ## Strings
 
