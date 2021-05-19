@@ -237,7 +237,8 @@ for key, value in my_dict.items(): print(key,value)
 ```python
 my_tuple = (1,2,3)
 my_tuple = tuple([1,2,3])
-my_tuple[0]
+my_tuple[0] # returns 1
+my_tuple[0] = 7 # TypeError: 'tuple' object does not support item assignment
 ```
 
 ## Slicing
