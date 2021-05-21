@@ -256,7 +256,13 @@ my_list[:]
 my_list[]
 my_list
 
+# Slicing will never throw an `index out of range` exception
+s = 'abcde'
+s[0:100] # returns 'abcde'
+s[-100:100] # returns ''
+
 # Examples
+s[0:-1] # everything but the last element
 my_list[::2] # Every second element
 "abc"[::-1] # Reverse a string
 arr[n:] + arr[:n] # shift/roll/rotate a list
@@ -287,6 +293,7 @@ arr[0], arr[1] = arr[1], arr[0]
 # tuple unpacking
 (x, y, z) = 1, 2, 3
 x, y, z = (1, 2, 3)
+x, _, _ = (1, 2, 3) # only assign x
 x, y, z = 1, 2, 3
 
 # iterable unpacking (NB: not safe with sets)
